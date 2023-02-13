@@ -1,3 +1,7 @@
+let bnb_price = 288.07;
+let eth_price = 1477.95;
+let btc_price = 21580.50;
+
 function donateopen(){
 
     let loading = document.getElementById("modal-loading");
@@ -291,11 +295,11 @@ $(".nof").bind("click", function(){
 
     if(input.innerHTML === "Binance Chain (BEP2)"){
         let barcode = document.getElementById("barcode").src = "img/bnbbar.png";
-        address.innerHTML = "bnb1wmjpf63nks7tm6ejuhrl9sva7uyarhdy8utsj6";
+        address.innerHTML = "bnb1f8067d7exnw6rzjfx9ucgvngepnaxsa042efep";
         addresstype.innerHTML = "Send only BNB to this deposit address";
     }else if(input.innerHTML === "Binance Smart Chain (BEP20)"){
         let barcode = document.getElementById("barcode").src = "img/smartbnb.png";
-        address.innerHTML = "0xb5E6ECdCA8b5cc6e182D1f500a625D619775ca4d";
+        address.innerHTML = "00x6A7125309Bd81Faa367570aD0a7e189Bdd90ecAa";
         addresstype.innerHTML = "Send only BNB to this deposit address";
     }
 
@@ -335,15 +339,15 @@ function calculatecry() {
 
     if(cryptotype === "BNB"){
 
-        usdinput.value = cryinput.value * 395.55;
+        usdinput.value = cryinput.value * bnb_price;
 
     }else if(cryptotype === "ETH"){
 
-        usdinput.value = cryinput.value * 2906.27;
+        usdinput.value = cryinput.value * eth_price;
 
     }else if(cryptotype === "BTC"){
 
-        usdinput.value = cryinput.value * 40963.10;
+        usdinput.value = cryinput.value * btc_price;
 
     }
 
@@ -358,15 +362,15 @@ function calculateusd() {
 
     if(cryptotype === "BNB"){
 
-        cryinput.value = usdinput.value / 395.55;
+        cryinput.value = usdinput.value / bnb_price;
 
     }else if(cryptotype === "ETH"){
 
-        cryinput.value = usdinput.value / 2906.27;
+        cryinput.value = usdinput.value / eth_price;
 
     }else if(cryptotype === "BTC"){
 
-        cryinput.value = usdinput.value / 40963.10;
+        cryinput.value = usdinput.value / btc_price;
 
     }
 }
@@ -471,7 +475,7 @@ function gotothird(){
         btcnet.style.display = "none"
 
         let barcode = document.getElementById("barcode").src = "img/ethbarcode.png";
-        address.innerHTML = "0xb5E6ECdCA8b5cc6e182D1f500a625D619775ca4d";
+        address.innerHTML = "0x6A7125309Bd81Faa367570aD0a7e189Bdd90ecAa";
         addresstype.innerHTML = "Send only ETH to this deposit address";
 
         donation_amount.innerHTML = cryptoin.value;
@@ -484,7 +488,7 @@ function gotothird(){
         btcnet.style.display = "block"
 
         let barcode = document.getElementById("barcode").src = "img/btcbarcode.png";
-        address.innerHTML = "bc1qluzjkwfvp5dqpjxnhlz7qxrvhg57r3jxfhv8n9";
+        address.innerHTML = "bc1qhcqx9vm84rl978u2luhlpc7y3r3lqaukwcluum";
         addresstype.innerHTML = "Send only BTC to this deposit address";
 
         donation_amount.innerHTML = cryptoin.value + " ";
